@@ -1,5 +1,6 @@
 result
 out/*
+data
 
 # Include the PDF and the out/ directory
 !out/detypstify-ocr-for-formula-generation.pdf

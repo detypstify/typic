@@ -11,6 +11,15 @@ The model is hosted here.
 
 ## Installation
 
+## Obtaining data
+
+We use oxen to version control our data. To get the oxen executable, run `nix develop`. Then, from the root of this repo, clone the oxen repo:
+
+```sh
+oxen clone https://hub.oxen.ai/DiracDelta/data
+```
+
+The datasets we use for this project will now be available in `data/`.
 
 ## Training the model
 
