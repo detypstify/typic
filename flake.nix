@@ -16,6 +16,7 @@
         l,
         pkgs,
         config,
+        system,
         ...
       }: {
         devShells.default = pkgs.mkShell {
@@ -27,6 +28,7 @@
 
           packages = l.attrValues {
             inherit (pkgs) just;
+            inherit (inputs.oxen.packages.${system}) oxen-cli;
           };
         };
 
@@ -55,6 +57,11 @@
     typst-packages = {
       url = "github:typst/packages";
       flake = false;
+    };
+
+    oxen = {
+      url = "github:oxen-ai/oxen";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }
