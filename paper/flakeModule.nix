@@ -48,7 +48,7 @@
     devShells.paper = pkgs.mkShell {
       inputsFrom = [config.packages.paper];
       packages = l.attrValues {
-        inherit (pkgs) typst-preview typstyle tinymist;
+        inherit (pkgs) typstyle tinymist;
       };
     };
   };
