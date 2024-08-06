@@ -6,6 +6,6 @@ edition = "2021"
 [dependencies]
 typst = "0.11.1"
 typst-svg = "0.11.1"
-ttf-parser = "0.24.0"
+ttf-parser = "0.24.1"
 comemo = "0.4.0"
 typst-assets = {version = "0.11.1", features = ["fonts"]}
