@@ -2,6 +2,10 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #1a202c; /* Dark background color */
     color: #f7fafc; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 canvas {
