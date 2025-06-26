@@ -1,42 +1,55 @@
 {
-  description = "detypstify: Using OCR to convert images of formulas into Typst code.";
+  description = "typic: Using OCR to convert images of formulas into Typst code.";
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-darwin" "x86_64-darwin"];
+  outputs =
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
       imports = [
-        {perSystem = {lib, ...}: {_module.args.l = lib // builtins;};}
+        {
+          perSystem =
+            { lib, ... }:
+            {
+              _module.args.l = lib // builtins;
+            };
+        }
 
         inputs.treefmt-nix.flakeModule
         ./rust.flakeModule.nix
         ./python.flakeModule.nix
         ./paper/flakeModule.nix
       ];
-      perSystem = {
-        l,
-        pkgs,
-        config,
-        system,
-        ...
-      }: {
-        devShells.default = pkgs.mkShell {
-          inputsFrom = [
-            config.devShells.rust
-            config.devShells.python
-            config.devShells.paper
-          ];
+      perSystem =
+        {
+          l,
+          pkgs,
+          config,
+          system,
+          ...
+        }:
+        {
+          devShells.default = pkgs.mkShell {
+            inputsFrom = [
+              config.devShells.rust
+              config.devShells.python
+              config.devShells.paper
+            ];
 
-          packages = l.attrValues {
-            inherit (pkgs) just;
-            inherit (inputs.oxen.packages.${system}) oxen-cli;
+            packages = l.attrValues {
+              inherit (pkgs) just;
+              inherit (inputs.oxen.packages.${system}) oxen-cli;
+            };
+          };
+
+          treefmt.config = {
+            projectRootFile = "flake.nix";
+            programs.alejandra.enable = true;
           };
         };
-
-        treefmt.config = {
-          projectRootFile = "flake.nix";
-          programs.alejandra.enable = true;
-        };
-      };
     };
 
   inputs = {

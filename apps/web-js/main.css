@@ -1,0 +1,86 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c; /* Dark background color */
+    color: #f7fafc; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    background-color: #2d3748; /* Darker background for canvas */
+    border-color: #4a5568; /* Dark border color */
+}
+
+#main {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.fa {
+  padding: 8px;
+  text-decoration: none;
+  margin: 10px 10px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: #0077B5;
+  color: white;
+}
+
+.fa-github {
+  background: black;
+  color: white;
+}
+
+.button-like {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #2d3748;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none; /* Prevent text selection */
+}
+
+.button-like:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+.button-like:active {
+    background-color: #1f1f1f; /* Even darker blue on click */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button-like:focus {
+    outline: none;
+}
+
+@font-face {
+    font-family: '0xProto Regular';
+    src: url(https://humantooth.neocities.org/fonts/0xProto-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: '0xProto Regular', ui-serif;
+}

@@ -44,16 +44,16 @@ pub(crate) fn App() -> Element {
             div {
                 id: "header",
                 class: "flex flex-row sticky items-center justify-center z-10",
-                img { src: "logo.png", class: "w-10 h-10 mr-8 rounded-md" }
+                img { src: "typic_logo.webp", class: "w-10 h-10 mr-8 rounded-md" }
                 h1 {
                     class: "text-4xl font-bold mb-4",
                     style: "font-family:'0xProto Regular'",
-                    "Detypstify"
+                    "Typic"
                 }
                 div { class: "flex justify-center ml-6",
                     a {
                         target: "_blank",
-                        href: "https://github.com/DieracDelta/detypstify",
+                        href: "https://github.com/detypstify/typic",
                         i { class: "fa fa-github" }
                     }
                 }

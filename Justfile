@@ -4,7 +4,7 @@ app-root := root / 'apps' / 'web-dioxus'
 
 paper-root := root / 'paper'
 paper-src := paper-root / 'main.typ'
-paper-out := root / 'out' / 'detypstify-ocr-for-formula-generation.pdf'
+paper-out := root / 'out' / 'typic-ocr-for-formula-generation.pdf'
 
 export TYPST_ROOT := paper-root
 

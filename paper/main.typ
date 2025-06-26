@@ -21,16 +21,16 @@
 )
 
 #show: neurips2023.with(
-  title: "Detypstify: OCR for formula generation",
+  title: "Typic: OCR for formula generation",
   authors: (authors, affls),
   keywords: ("Machine Learning", "NeurIPS"),
   // one paragraph only
   abstract: [
     Optical Character Recognition (OCR) has seen widespread use in the past few years. It has been used for data entry automation,
     document management, and even in the medical field for digitizing medical records. OCR makes the tasks both faster and less
-    error prone. In this paper, we present Detypstify, a tool which uses state-of-the-art OCR to generate math formulas from images.
+    error prone. In this paper, we present Typic, a tool which uses state-of-the-art OCR to generate math formulas from images.
     The problem of generating LaTeX formulas from images is not new, in fact it forms the basis of the OpenAI Im2Latex problem which
-    was posted as part of the first request for research @openai. Detypstify tackles this problem in a new way by using a transformer
+    was posted as part of the first request for research @openai. Typic tackles this problem in a new way by using a transformer
     based model. We deploy this model using Web Assembly and WGPU to allow for client side computation.
   ],
   bibliography: bibliography("main.bib"),
@@ -46,14 +46,14 @@ across diverse industries. Moreover, its applications extend into the realm of h
 records, contributing to the modernization of healthcare systems. Amidst this landscape, the demand for innovative OCR solutions
 continues to grow.
 
-This paper introduces Detypstify, a novel tool designed to address the challenge of generating mathematical formulas from images using
-state-of-the-art OCR technology. While the task of converting images to LaTeX formulas is not new, Detypstify distinguishes itself through
+This paper introduces Typic, a novel tool designed to address the challenge of generating mathematical formulas from images using
+state-of-the-art OCR technology. While the task of converting images to LaTeX formulas is not new, Typic distinguishes itself through
 its utilization of a transformer-based model. This approach marks a departure from traditional methods and builds upon the foundation laid
 by initiatives such as the OpenAI Im2Latex problem, which has stimulated research in this domain.
 
-Detypstify leverages Web Assembly and WGPU for deployment, enabling client-side computation and enhancing accessibility. By harnessing the
-power of these technologies, Detypstify not only offers a sophisticated solution but also ensures seamless integration into existing workflows.
-This paper provides an overview of the design, implementation, and performance of Detypstify, underscoring its potential to advance the field
+Typic leverages Web Assembly and WGPU for deployment, enabling client-side computation and enhancing accessibility. By harnessing the
+power of these technologies, Typic not only offers a sophisticated solution but also ensures seamless integration into existing workflows.
+This paper provides an overview of the design, implementation, and performance of Typic, underscoring its potential to advance the field
 of OCR and mathematical representation.
 
 = Background and Related Work
@@ -69,12 +69,12 @@ optical character recognition, is a model which outperforms the state-of-the-art
 As such we decided to use this model as our base model for fine tuning.
 
 == Other formula generation tools
-While there are several other tools which implement the same functionality as Detypstify, Detyptify has several features which
+While there are several other tools which implement the same functionality as Typic, Detyptify has several features which
 distinguish it from the competition.
 + *Support for Typst*, there are no tools which generate Typst formulas from images.
-+ *Web Assembly*, Detypstify is deployed using Web Assembly which allows for deployment as a static website without a backend.
++ *Web Assembly*, Typic is deployed using Web Assembly which allows for deployment as a static website without a backend.
   All computation is performed by the client which we haven't seen in other tools.
-+ *Transformer based OCR*, most tools use CNN or RNN based OCR, Detypstify uses a transformer based OCR.
++ *Transformer based OCR*, most tools use CNN or RNN based OCR, Typic uses a transformer based OCR.
 
 == Method description
 == Model
@@ -129,7 +129,7 @@ they used to train their model and try again.
 
 
 = Conclusion
-We present Detypstify, a tool that uses OCR for formula generation. We fine tune a transformer based large model for
+We present Typic, a tool that uses OCR for formula generation. We fine tune a transformer based large model for
 this task and deploy it statically using Web Assembly and WGPU.
 Our results are not as good as we hoped, but with the help of the authors of LaTeX OCR we hope to improve the performance
 and make the tool usable. The deployment framework is ready, but with no model to deploy it is not very useful. After we

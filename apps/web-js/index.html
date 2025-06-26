@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typic • Math OCR & Typst</title>
+    <!-- Tailwind generated Utilities -->
+    <link href="/tailwind.css" rel="stylesheet" />
+    <!-- App-specific Styles -->
+    <link href="/main.css" rel="stylesheet" />
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="/typic_icon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <!-- Branding Header -->
+    <header id="header" class="flex flex-row sticky items-center justify-center z-10">
+      <img src="/typic_logo.webp" alt="Typic Logo" class="w-10 h-10 mr-8 rounded-md" />
+      <h1 class="text-4xl font-bold mb-4" style="font-family:'0xProto Regular'">Typic</h1>
+      <div class="flex justify-center ml-6">
+        <a href="https://github.com/detypstify/typic" target="_blank"><i class="fa fa-github"></i></a>
+      </div>
+    </header>
+
+    <!-- Math OCR Section -->
+    <section id="main">
+      <h2 class="text-2xl font-semibold">Math Formula OCR & Conversion 📝</h2>
+      <p>Upload an image of a math formula to get LaTeX and Typst outputs.</p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-md">
+        <input type="file" id="imageUpload" accept="image/*" class="block w-full sm:w-auto p-2 bg-gray-800 rounded" />
+        <button id="processBtn" disabled class="button-like">Process Image</button>
+      </div>
+
+      <!-- <div id="status" class="font-medium text-lg">Loading models…</div> -->
+
+      <div class="container items-center">
+        <div class="w-full">
+          <h3 class="text-xl font-medium mb-2">LaTeX Output:</h3>
+          <pre id="latexOutput" class="bg-gray-800 p-4 rounded whitespace-pre-wrap w-full">&mdash;</pre>
+        </div>
+        <div class="w-full">
+          <h3 class="text-xl font-medium mb-2">Typst Output:</h3>
+          <pre id="typstOutput" class="bg-gray-800 p-4 rounded whitespace-pre-wrap w-full">&mdash;</pre>
+        </div>
+      </div>
+      <!-- <div id="debug" class="bg-gray-800 p-4 border-l-4 border-blue-500 rounded hidden w-full max-w-xl"> -->
+      <!--   <h4 class="text-lg font-medium mb-2">Debug Info:</h4> -->
+      <!--   <pre id="debugOutput" class="whitespace-pre-wrap"></pre> -->
+      <!-- </div> -->
+    </section>
+
+    <!-- OCR Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tex2typst/dist/tex2typst.min.js"></script>
+    <script type="module" src="texify.js"></script>
+  </body>
+</html>

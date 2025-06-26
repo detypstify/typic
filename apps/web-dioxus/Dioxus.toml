@@ -1,7 +1,7 @@
 [application]
 
 # App (Project) Name
-name = "detypstify"
+name = "typic"
 
 # Dioxus App Default Platform
 # desktop, web
@@ -18,8 +18,8 @@ hot_reload = true
 [web.app]
 
 # HTML title tag content
-title = "Detypstify"
-base_path = "detypstify/"
+title = "Typic"
+base_path = "typic/"
 
 [web.watcher]
 
@@ -32,7 +32,7 @@ watch_path = ["src", "public"]
 # include `assets` in web platform
 [web.resource]
 
-style = ["./tailwind.css", "./main.css", "./favicon.ico"] # , "./tailwindcss7b3e5b8fafb8d3a6.css"]
+style = ["./tailwind.css", "./main.css", "./typic_icon.ico"] # , "./tailwindcss7b3e5b8fafb8d3a6.css"]
 
 # Javascript code file
 script = []

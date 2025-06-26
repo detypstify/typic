@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "detypstify"
+name = "typic"
 version = "0.1.0"
 description = "Using OCR to convert images of formulas into Typst code."
 authors = ["Justin Restivo <justin.restivo@yale.edu>"]
